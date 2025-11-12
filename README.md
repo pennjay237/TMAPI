@@ -17,5 +17,4 @@ Backend API for a task-management app using Node.js, Express and PostgreSQL.
 
 1. Clone:
 ```bash
-git clone <repo-url>
 cd task-manager-api

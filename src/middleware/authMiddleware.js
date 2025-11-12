@@ -27,7 +27,6 @@ const authenticate = {
         return res.status(401).json({ error: 'Invalid or expired token' });
       }
       req.user = payload;
-      // Optionally attach full user
       const user = await findUserById(payload.user_id);
       if (!user) return res.status(401).json({ error: 'User not found' });
       req.user.user = user;
@@ -47,7 +46,6 @@ const authenticate = {
         const user = await findUserById(payload.user_id);
         if (user) req.user.user = user;
       } catch (err) {
-        // ignore invalid token for optional auth
       }
       next();
     } catch (err) {
